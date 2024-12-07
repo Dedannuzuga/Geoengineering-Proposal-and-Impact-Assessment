@@ -10,6 +10,11 @@ path = 'contracts/geo-token.clar'
 clarity_version = 2
 epoch = 2.5
 
+[contracts.impact-assessment_]
+path = 'contracts/impact-assessment_.clar'
+clarity_version = 2
+epoch = 2.5
+
 [contracts.proposal-review]
 path = 'contracts/proposal-review.clar'
 clarity_version = 2
