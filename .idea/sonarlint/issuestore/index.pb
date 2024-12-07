@@ -9,3 +9,5 @@ E
 contracts/voting.clar,8/c/8c1cfbbcd734bf0b786519a1bc3ab7e69673a66c
 Q
 !contracts/impact-assessment_.clar,3/a/3a6dbcb8ec7b2975f9460697d0576aaa4c208f17
+K
+contracts/climate-data.clar,5/3/530882281a3dafe4e47f49e198fe4ae920cd37ef
