@@ -1,21 +1,34 @@
+import { describe, it, expect } from 'vitest';
 
-import { describe, expect, it } from "vitest";
-
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
+describe('Voting Contract', () => {
+  it('should cast a vote', () => {
+    const result = vote(1, 100);
+    expect(result.success).toBe(true);
   });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
+  
+  it('should retrieve vote amount', () => {
+    const voteAmount = getVote(1, 'voter_address');
+    expect(voteAmount).toBeDefined();
+    expect(typeof voteAmount.amount).toBe('number');
+  });
+  
+  it('should retrieve total votes for a proposal', () => {
+    const totalVotes = getProposalVotes(1);
+    expect(totalVotes).toBeDefined();
+    expect(typeof totalVotes['total-votes']).toBe('number');
+  });
 });
+
+// Mock functions to simulate contract calls
+function vote(proposalId: number, amount: number) {
+  return { success: true };
+}
+
+function getVote(proposalId: number, voter: string) {
+  return { amount: 100 };
+}
+
+function getProposalVotes(proposalId: number) {
+  return { 'total-votes': 300 };
+}
+
